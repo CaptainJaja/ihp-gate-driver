@@ -45,7 +45,7 @@ device="ceramic capacitor"}
 C {gnd.sym} 200 0 0 0 {name=l5 lab=0}
 C {lab_pin.sym} 200 -60 2 0 {name=p1 sig_type=std_logic lab=OUT}
 C {lab_pin.sym} -110 -60 0 0 {name=p2 sig_type=std_logic lab=IN}
-C {code_shown.sym} 170 90 0 0 {name=s1 value="
+C {code_shown.sym} -350 90 0 0 {name=s1 value="
 .lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
 .tran 10p 60n
 .control
