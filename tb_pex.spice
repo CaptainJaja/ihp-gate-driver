@@ -1,0 +1,30 @@
+* Testbench simulation cellule extraite IHP SG13G2
+.title TB Gate Driver PEX
+
+* 1. Mode de compatibilite pour mapper M sur les sous-circuits de la PDK
+.param temp=27
+
+* 2. Modeles technologiques IHP SG13G2
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+.lib /foss/pdks/ihp-sg13g2/libs.tech/ngspice/models/cornerRES.lib res_typ
+
+* 3. Inclusion du netlist extrait
+.include /foss/designs/ihp-gate-driver/layout/lvs_run_gate_driver_2026_11_07_16_07_47/gate_driver_extracted.cir
+
+* 4. Sources et alimentations
+Vsupply VDD 0 DC 1.2
+Vground VSS 0 DC 0
+Vin IN 0 PULSE(0 1.2 100ps 40ps 40ps 1ns 2ns)
+Cload OUT 0 30fF
+
+* 5. Instanciation de la cellule extraite (ordre: IN OUT VDD VSS)
+X1 IN OUT VDD VSS gate_driver
+
+* 6. Simulation
+.control
+  tran 1ps 4ns
+  run
+  plot v(IN) v(OUT)
+.endc
+
+.end

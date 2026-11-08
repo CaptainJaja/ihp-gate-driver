@@ -1,0 +1,7 @@
+* Inclusion de l'extraction PEX Magic
+.include /foss/designs/ihp-gate-driver/layout/gate_driver_pex_magic.spice
+
+* Wrapper de correspondance des broches (symbole: VDD OUT IN VSS -> magic: IN OUT VSS VDD)
+.SUBCKT xinv_pex VDD OUT IN VSS
+X1 IN OUT VSS VDD gate_driver
+.ENDS

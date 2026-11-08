@@ -1,5 +1,17 @@
-*.raw
+# Runs temporaires DRC / LVS KLayout
+lvs_run_*/
+drc_run_*/
+*.lyrdb
 *.log
-*.out
-*.sch~
-*.sym~
+
+# Extractions intermédiaires Magic
+*.ext
+*.mag
+
+# Simulations et caches Ngspice / Xschem
+simulations/
+*.raw
+*.jou
+*~
+*.swp
+*.swo
